@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+
+  axios.get('https://api.cryptorank.io/v0/coins/bitcoin?locale=en').then(res => {
+    console.log(res.data);
+  }).catch(err => {
+    console.log(err)
+  })
+
   return (
     <div className="App">
       <header className="App-header">
